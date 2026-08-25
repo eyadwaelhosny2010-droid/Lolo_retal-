@@ -1,153 +1,105 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lolo ❤️ Retal</title>
+    <title>Lolo ❤️ Retal</title>
 
-<style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-*{
-    box-sizing:border-box;
-}
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: linear-gradient(135deg, #160b12, #3a1224, #160b12);
+            color: white;
+            min-height: 100vh;
+        }
 
-body{
-    margin:0;
-    font-family:Tahoma,Arial,sans-serif;
-    background:linear-gradient(135deg,#160711,#3b1028,#160711);
-    color:white;
-    text-align:center;
-}
+        .container {
+            width: 92%;
+            max-width: 800px;
+            margin: auto;
+            padding: 25px 0 50px;
+        }
 
-.container{
-    width:100%;
-    max-width:900px;
-    margin:auto;
-    padding:25px 15px;
-}
+        .hero {
+            text-align: center;
+            padding: 35px 15px;
+        }
 
-.start{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-h1{
-    font-size:48px;
-    margin:15px;
-}
-
-h2{
-    font-size:30px;
-}
-
-p{
-    font-size:18px;
-    line-height:2;
-}
-
-button{
-    border:0;
-    background:linear-gradient(135deg,#ff347d,#ff7aad);
-    color:white;
-    padding:16px 30px;
-    border-radius:40px;
-    font-size:19px;
-    font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 10px 30px #ff347d55;
-}
-
-.card{
-    background:#ffffff12;
-    border:1px solid #ffffff20;
-    border-radius:25px;
-    padding:25px;
-    margin:25px 0;
-    backdrop-filter:blur(10px);
-}
-
-.hidden{
-    display:none;
-}
-
-.heart{
-    font-size:80px;
-    animation:heart 1.2s infinite;
-}
-
-@keyframes heart{
-    50%{
-        transform:scale(1.15);
-    }
-}
-
-.date{
-    display:inline-block;
-    padding:8px 18px;
-    border-radius:30px;
-    background:#ffffff15;
-    color:#ffd6e5;
-}
-
-.counter{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-}
-
-.counter div{
-    background:#00000035;
-    padding:18px 5px;
-    border-radius:18px;
-}
-
-.counter b{
-    display:block;
-    font-size:30px;
-}
-
-.counter span{
-    color:#e8cbd7;
-}
-
-.love-list{
-    display:grid;
-    gap:12px;
-}
-
-.love-list div{
-    padding:15px;
-    background:#ff3f8617;
-    border:1px solid #ff3f8630;
-    border-radius:18px;
-    font-size:18px;
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.gallery img{
-    width:100%;
-    height        .heart {
+        .heart {
             font-size: 70px;
-            margin: 20px;
+            margin: 15px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 19px;
+            color: #ffd6e5;
+            line-height: 1.8;
         }
 
         .card {
-            background: #1e1e1e;
+            background: rgba(255, 255, 255, 0.08);
             padding: 25px;
             border-radius: 20px;
             margin-top: 25px;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .card h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #ff9fbd;
+        }
+
+        .card p {
+            font-size: 18px;
+            line-height: 2;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            display: block;
+            border: 2px solid rgba(255,255,255,0.15);
+        }
+
+        .love-list {
+            margin-top: 25px;
+        }
+
+        .love-list div {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 18px;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         button {
+            display: block;
+            margin: 25px auto 0;
             border: none;
             padding: 15px 25px;
             border-radius: 30px;
@@ -157,45 +109,138 @@ button{
             cursor: pointer;
         }
 
+        button:active {
+            transform: scale(0.97);
+        }
+
         #message {
-            display: none;
+            text-align: center;
             margin-top: 20px;
             font-size: 20px;
+            color: #ffd6e5;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #d9aabd;
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 30px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery img {
+                height: 180px;
+            }
+
+            .card p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
+    <section class="hero">
         <div class="heart">❤️</div>
 
         <h1>Lolo & Retal</h1>
 
-        <div class="card">
-            <p>
-                دي صفحة صغيرة مخصوص ليكي ❤️
-                <br>
-                عشان أقولك إنك شخص مميز جدًا عندي.
-            </p>
+        <div class="subtitle">
+            أجمل الذكريات بتفضل دايمًا في القلب ❤️
+        </div>
+    </section>
 
-            <button onclick="showMessage()">
-                دوسي هنا ❤️
-            </button>
 
-            <div id="message">
-                مهما حصل، هتفضلي دايمًا ليكي مكان مميز ❤️✨
-            </div>
+    <section class="card">
+        <h2>💌 رسالة</h2>
+
+        <p>
+            في ناس وجودهم بيخلي الأيام أحلى،
+            والذكريات معاهم بتفضل ليها مكان خاص في القلب.
+            ❤️
+        </p>
+    </section>
+
+
+    <section class="card">
+        <h2>📸 ذكرياتنا</h2>
+
+        <div class="gallery">
+
+            <img src="Snapchat-1062191034.jpg" alt="صورة">
+            
+            <img src="Snapchat-1528833698.jpg" alt="صورة">
+
+            <img src="Snapchat-1616043218.jpg" alt="صورة">
+
+            <img src="Snapchat-1933169688.jpg" alt="صورة">
+
+            <img src="Snapchat-495499023.jpg" alt="صورة">
+
+            <img src="Snapchat-870296961.jpg" alt="صورة">
+
+        </div>
+    </section>
+
+
+    <section class="card love-list">
+
+        <h2>❤️ حاجات حلوة</h2>
+
+        <div>🌹 أحلى الذكريات</div>
+
+        <div>✨ أجمل اللحظات</div>
+
+        <div>💫 لحظات مستحيل تتنسي</div>
+
+        <div>❤️ ذكريات ليها مكان خاص</div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>💖</h2>
+
+        <p>
+            مهما عدت الأيام،
+            بعض الذكريات بتفضل دايمًا مميزة.
+        </p>
+
+        <button onclick="showMessage()">
+            اضغط هنا ❤️
+        </button>
+
+        <div id="message">
+            أجمل حاجة هي الذكريات الحلوة ❤️✨
         </div>
 
-    </div>
+    </section>
 
-    <script>
-        function showMessage() {
-            document.getElementById("message").style.display = "block";
-        }
-    </script>
+
+    <footer>
+        Made with ❤️
+    </footer>
+
+</div>
+
+
+<script>
+    function showMessage() {
+        document.getElementById("message").style.display = "block";
+    }
+</script>
 
 </body>
 </html>
