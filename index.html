@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Janat ♥️</title>
+<title>إلى هدى ❤️</title>
 
 <style>
 *{
@@ -15,180 +15,88 @@ body{
   margin:0;
   min-height:100vh;
   font-family:Tahoma,Arial,sans-serif;
-  color:white;
-  background:
-    radial-gradient(circle at 20% 10%,#6b2448 0,#351326 35%,#10050c 75%);
-  overflow-x:hidden;
-}
-
-.container{
-  width:92%;
-  max-width:800px;
-  margin:auto;
-  padding-bottom:50px;
-}
-
-.start{
-  min-height:100vh;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3,#8e44ad);
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
+  color:white;
+  overflow:hidden;
+}
+
+.card{
+  width:90%;
+  max-width:500px;
+  padding:35px 25px;
   text-align:center;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:30px;
+  backdrop-filter:blur(15px);
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  animation:show 1.2s ease;
 }
 
 .heart{
-  font-size:90px;
-  animation:pulse 1.3s infinite;
+  font-size:65px;
+  animation:beat 1.2s infinite;
 }
 
-@keyframes pulse{
-  50%{
-    transform:scale(1.15);
-  }
+h1{
+  font-size:38px;
+  margin:10px 0 20px;
 }
 
-.start h1{
-  font-size:42px;
-  margin:15px 0;
-}
-
-.start p{
-  color:#ffd6e5;
-  font-size:18px;
-  line-height:1.9;
+p{
+  font-size:19px;
+  line-height:2;
+  margin:0 0 25px;
 }
 
 button{
   border:0;
-  border-radius:50px;
-  padding:15px 30px;
-  margin:8px;
-  color:white;
-  font-size:18px;
-  cursor:pointer;
-  background:linear-gradient(135deg,#ff327d,#ff79a9);
-  box-shadow:0 8px 25px #ff327d55;
-}
-
-.musicBtn{
-  background:#ffffff14;
-  box-shadow:none;
-}
-
-.hidden{
-  display:none;
-}
-
-header{
-  text-align:center;
-  padding:45px 10px 25px;
-}
-
-.name{
-  font-size:48px;
-  font-weight:bold;
-  color:#ffb2cb;
-  text-shadow:0 0 25px #ff4d91;
-}
-
-.subtitle{
-  font-size:19px;
-  color:#f4cedb;
-  line-height:1.8;
-}
-
-.card{
-  margin:20px 0;
-  padding:28px 23px;
-  border-radius:27px;
-  background:#ffffff0d;
-  border:1px solid #ffffff1c;
-  box-shadow:0 12px 35px #0005;
-}
-
-.card h2{
-  text-align:center;
-  color:#ff9fbe;
-  margin-top:0;
-}
-
-.message{
+  padding:14px 28px;
+  border-radius:30px;
+  background:white;
+  color:#e84370;
   font-size:17px;
-  line-height:2.2;
-  color:#fff0f5;
-}
-
-.highlight{
-  text-align:center;
-  font-size:23px;
-  line-height:2;
-  color:#ffb4cc;
   font-weight:bold;
+  cursor:pointer;
 }
 
-.love{
-  text-align:center;
+#message{
+  display:none;
+  margin-top:25px;
   font-size:18px;
-  line-height:2.2;
-  color:#ffe5ed;
+  line-height:2;
 }
 
-.final{
-  text-align:center;
+@keyframes beat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.2)}
 }
 
-.final .big{
-  font-size:70px;
-  animation:pulse 1.3s infinite;
-}
-
-footer{
-  text-align:center;
-  color:#ad8d9b;
-  padding:25px;
-}
-
-.float{
-  position:fixed;
-  bottom:-50px;
-  pointer-events:none;
-  z-index:100;
-  animation:floatUp 7s linear forwards;
-}
-
-@keyframes floatUp{
-  0%{
-    transform:translateY(0) rotate(0);
+@keyframes show{
+  from{
     opacity:0;
+    transform:translateY(40px);
   }
-
-  15%{
+  to{
     opacity:1;
-  }
-
-  100%{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
+    transform:translateY(0);
   }
 }
 
-@media(max-width:600px){
+.heart-fall{
+  position:fixed;
+  top:-30px;
+  font-size:22px;
+  animation:fall 5s linear forwards;
+}
 
-  .start h1{
-    font-size:31px;
-  }
-
-  .name{
-    font-size:40px;
-  }
-
-  .card{
-    padding:23px 18px;
-  }
-
-  .message{
-    font-size:16px;
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(360deg);
+    opacity:0;
   }
 }
 </style>
@@ -196,311 +104,56 @@ footer{
 
 <body>
 
-<div class="container">
-
-<!-- شاشة البداية -->
-
-<section id="start" class="start">
+<div class="card">
 
   <div class="heart">❤️</div>
 
-  <h1>دوسي هنا يا جنات ❤️</h1>
+  <h1>إلى هدى</h1>
 
   <p>
-    عملتلك حاجة صغيرة مخصوص علشان أقولك حاجة
-    <br>
-    كان نفسي أقولها من زمان 🥹
+    هدى ❤️<br>
+    في ناس وجودهم في حياتنا بيخلي الأيام أحلى،
+    وإنتِ من الناس اللي وجودهم له معنى خاص.
+    <br><br>
+    يمكن الكلام مش دايمًا يقدر يوصف اللي جوا القلب،
+    بس حبيت أقولك إنك شخص غالي ومميز،
+    ووجودك بيفرق أكتر مما تتخيلي.
   </p>
 
-  <button id="openBtn">
-    دوسي هنا ♥️
+  <button onclick="showMessage()">
+    دوسي هنا ❤️
   </button>
 
-  <button id="musicBtn" class="musicBtn">
-    🎵 شغّلي الأغنية
-  </button>
-
-</section>
-
-
-<!-- الموقع -->
-
-<section id="content" class="hidden">
-
-<header>
-
-  <div class="name">
-    Janat ♥️
+  <div id="message">
+    أتمنى دايمًا أشوفك مبسوطة،
+    وتفضلي بنفس القلب الجميل اللي بيخلي وجودك مميز.
+    <br>
+    دي رسالة بسيطة… بس معمولة مخصوص ليكي يا هدى 🌷❤️
   </div>
 
-  <div class="subtitle">
-    رسالة من قلبي ليكي 🥹❤️
-  </div>
-
-</header>
-
-
-<!-- الاعتذار -->
-
-<section class="card">
-
-<h2>💌 بصي يا جنات</h2>
-
-<div class="message">
-
-بصي ي جنات أنا حاولت أصلح كل حاجه حرفيًا،
-وأنا كنت بحاول أطلعك مش زي ما هما شايفين،
-وفي نفس الوقت أصلح اللي بينا.
-
-<br><br>
-
-بس تقريبًا اتفهمت غلط،
-ومامتك عندها حق لما قالت إن علشان تكسب حد
-فلازم تخسر حد.
-
-<br><br>
-
-وأنا مفهمتش كده وقتها،
-ومعملتش اللي عملته بدماغي أو علشان أضايقك،
-أنا بس اتصرفت بسرعة جدًا ومن غير ما أفكر كويس.
-
-<br><br>
-
-والنتيجة إني طلعت بشكل وحش أوي،
-وبقيت في نظرك وحش،
-وده أكتر حاجة أنا زعلان منها.
-
-<br><br>
-
-أنا مش داخل أبرر لنفسي،
-أنا داخل أقولك كلمة واحدة من قلبي:
-
 </div>
-
-<div class="highlight">
-آســــف يا جنــــات ❤️
-</div>
-
-</section>
-
-
-<!-- اعتذار إضافي -->
-
-<section class="card">
-
-<h2>🥹 أنا آسف</h2>
-
-<div class="love">
-
-آسف لو تصرفي وجعك ❤️
-
-<br>
-
-آسف لو خليتك تزعلي مني.
-
-<br>
-
-آسف لو حسيتِ إني خذلتك.
-
-<br>
-
-آسف على كل حاجة اتفهمت غلط.
-
-<br><br>
-
-مكنش قصدي أخسرك،
-ولا كان قصدي أكون سبب في زعلك.
-
-<br><br>
-
-يمكن أنا غلطت في طريقة تصرفي،
-بس عمري ما كنت عايز أأذيكي.
-
-</div>
-
-</section>
-
-
-<!-- الحب -->
-
-<section class="card">
-
-<h2>❤️ ومن قلبي ليكي</h2>
-
-<div class="message">
-
-إنتِ شخص غالي عندي،
-وعشان كده أنا زعلان من نفسي أكتر من أي حد.
-
-<br><br>
-
-أنا مش عايز أقول كلام حلو وخلاص،
-أنا نفسي أثبتلك بأفعالي إن اعتذاري حقيقي.
-
-<br><br>
-
-ولو في حاجة أقدر أصلحها،
-هحاول أصلحها بهدوء ومن غير ما أضغط عليكي.
-
-<br><br>
-
-وأهم حاجة عندي إنك تكوني كويسة ومبسوطة،
-حتى لو أنا غلطت وخليتك تزعلي مني.
-
-</div>
-
-</section>
-
-
-<!-- رسالة أخيرة -->
-
-<section class="card final">
-
-<div class="big">
-❤️
-</div>
-
-<h2>Janat ♥️</h2>
-
-<div class="love">
-
-أنا آسف بجد.
-
-<br><br>
-
-ومش طالب منك تنسي كل حاجة في لحظة،
-ولا طالب منك تصدقيني لمجرد إني بقول كلام.
-
-<br><br>
-
-كل اللي بطلبه فرصة صغيرة
-أثبتلك فيها إن نيتي مكانتش وحشة.
-
-<br><br>
-
-سامحيني لو قدرتي 🥹❤️
-
-</div>
-
-</section>
-
-
-<footer>
-Made with ❤️ for Janat
-</footer>
-
-</section>
-
-</div>
-
-
-<!-- الموسيقى -->
-
-<audio id="music" loop preload="auto">
-  <source src="Tiktok Video Downloader.mp3" type="audio/mpeg">
-</audio>
-
 
 <script>
 
-/* فتح الرسالة */
+function showMessage(){
+  document.getElementById("message").style.display="block";
 
-const openBtn =
-document.getElementById("openBtn");
+  for(let i=0;i<25;i++){
+    let heart=document.createElement("div");
+    heart.className="heart-fall";
+    heart.innerHTML="❤️";
 
-const start =
-document.getElementById("start");
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(3+Math.random()*4)+"s";
+    heart.style.fontSize=(15+Math.random()*20)+"px";
 
-const content =
-document.getElementById("content");
+    document.body.appendChild(heart);
 
-openBtn.onclick=function(){
-
-  start.style.display="none";
-
-  content.classList.remove("hidden");
-
-  window.scrollTo(0,0);
-
-};
-
-
-/* تشغيل الأغنية */
-
-const music =
-document.getElementById("music");
-
-const musicBtn =
-document.getElementById("musicBtn");
-
-musicBtn.onclick=function(){
-
-  if(music.paused){
-
-    music.play()
-    .then(function(){
-
-      musicBtn.textContent="⏸️ وقّفي الأغنية";
-
-    })
-    .catch(function(){
-
-      alert(
-        "مش قادر أشغل الأغنية. تأكد إن ملف الصوت موجود جنب index.html وإن اسمه Tiktok Video Downloader.mp3"
-      );
-
-    });
-
-  }else{
-
-    music.pause();
-
-    musicBtn.textContent="🎵 شغّلي الأغنية";
-
+    setTimeout(()=>{
+      heart.remove();
+    },7000);
   }
-
-};
-
-
-/* قلوب متحركة */
-
-function makeHeart(){
-
-  const heart =
-  document.createElement("div");
-
-  heart.className="float";
-
-  const hearts=[
-    "❤️",
-    "💗",
-    "💖",
-    "💕",
-    "💘",
-    "🥹❤️"
-  ];
-
-  heart.textContent=
-  hearts[Math.floor(Math.random()*hearts.length)];
-
-  heart.style.left=
-  Math.random()*100+"vw";
-
-  heart.style.fontSize=
-  (16+Math.random()*22)+"px";
-
-  heart.style.animationDuration=
-  (5+Math.random()*4)+"s";
-
-  document.body.appendChild(heart);
-
-  setTimeout(function(){
-    heart.remove();
-  },9000);
-
 }
-
-setInterval(makeHeart,700);
 
 </script>
 
