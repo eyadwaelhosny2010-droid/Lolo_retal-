@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>إلى هدى ❤️</title>
+<title>Rodina ❤️</title>
 
 <style>
 *{
@@ -15,88 +15,191 @@ body{
   margin:0;
   min-height:100vh;
   font-family:Tahoma,Arial,sans-serif;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3,#8e44ad);
+  background:
+    radial-gradient(circle at 20% 20%,#ff6f9f,transparent 35%),
+    radial-gradient(circle at 80% 80%,#9b4dca,transparent 35%),
+    linear-gradient(135deg,#160713,#3a1028,#160713);
+  color:white;
+  overflow-x:hidden;
+}
+
+.container{
+  width:92%;
+  max-width:850px;
+  margin:auto;
+  padding-bottom:50px;
+}
+
+.start{
+  min-height:100vh;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  color:white;
-  overflow:hidden;
-}
-
-.card{
-  width:90%;
-  max-width:500px;
-  padding:35px 25px;
   text-align:center;
-  background:rgba(255,255,255,.15);
-  border:1px solid rgba(255,255,255,.3);
-  border-radius:30px;
-  backdrop-filter:blur(15px);
-  box-shadow:0 20px 50px rgba(0,0,0,.25);
-  animation:show 1.2s ease;
+  padding:20px;
 }
 
-.heart{
-  font-size:65px;
-  animation:beat 1.2s infinite;
+.start-heart{
+  font-size:95px;
+  animation:beat 1.3s infinite;
+  filter:drop-shadow(0 0 25px #ff4f91);
 }
 
-h1{
-  font-size:38px;
-  margin:10px 0 20px;
+.start h1{
+  font-size:42px;
+  margin:20px 0 10px;
 }
 
-p{
-  font-size:19px;
-  line-height:2;
-  margin:0 0 25px;
-}
-
-button{
-  border:0;
-  padding:14px 28px;
-  border-radius:30px;
-  background:white;
-  color:#e84370;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-#message{
-  display:none;
-  margin-top:25px;
+.start p{
+  color:#ffd8e6;
   font-size:18px;
   line-height:2;
 }
 
-@keyframes beat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.2)}
+button{
+  border:none;
+  border-radius:50px;
+  padding:15px 32px;
+  margin-top:15px;
+  background:linear-gradient(135deg,#ff3d7f,#ff83ad);
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 10px 30px #ff3d7f55;
 }
 
-@keyframes show{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.hidden{
+  display:none;
 }
 
-.heart-fall{
+header{
+  text-align:center;
+  padding:45px 10px 25px;
+}
+
+.name{
+  font-size:52px;
+  font-weight:bold;
+  color:#ffabc8;
+  text-shadow:0 0 25px #ff3d7f;
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:19px;
+  color:#f4cfdd;
+}
+
+.card{
+  background:#ffffff0d;
+  border:1px solid #ffffff20;
+  border-radius:28px;
+  padding:28px 23px;
+  margin:20px 0;
+  box-shadow:0 15px 40px #0005;
+  backdrop-filter:blur(8px);
+}
+
+.card h2{
+  text-align:center;
+  color:#ffabc9;
+  margin-top:0;
+  font-size:28px;
+}
+
+.message{
+  font-size:17px;
+  line-height:2.25;
+  color:#ffeaf1;
+}
+
+.center{
+  text-align:center;
+}
+
+.big-love{
+  font-size:70px;
+  animation:beat 1.3s infinite;
+}
+
+.quote{
+  text-align:center;
+  font-size:21px;
+  line-height:2;
+  color:#ffb7cf;
+  font-weight:bold;
+}
+
+.love-list{
+  display:grid;
+  gap:12px;
+}
+
+.love-list div{
+  padding:16px;
+  border-radius:18px;
+  background:#ff4c8c14;
+  border:1px solid #ff7eaa22;
+  text-align:center;
+  font-size:18px;
+}
+
+footer{
+  text-align:center;
+  color:#a98b99;
+  padding:30px 0;
+}
+
+.floating-heart{
   position:fixed;
-  top:-30px;
-  font-size:22px;
-  animation:fall 5s linear forwards;
+  bottom:-50px;
+  pointer-events:none;
+  z-index:100;
+  animation:rise 7s linear forwards;
 }
 
-@keyframes fall{
-  to{
-    transform:translateY(110vh) rotate(360deg);
+@keyframes beat{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.15);
+  }
+}
+
+@keyframes rise{
+  0%{
+    transform:translateY(0) rotate(0);
     opacity:0;
+  }
+
+  15%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:600px){
+
+  .start h1{
+    font-size:31px;
+  }
+
+  .name{
+    font-size:42px;
+  }
+
+  .card{
+    padding:23px 18px;
+  }
+
+  .message{
+    font-size:16px;
   }
 }
 </style>
@@ -104,56 +207,306 @@ button{
 
 <body>
 
-<div class="card">
+<div class="container">
 
-  <div class="heart">❤️</div>
+<!-- البداية -->
 
-  <h1>إلى هدى</h1>
+<section id="start" class="start">
+
+  <div class="start-heart">❤️</div>
+
+  <h1>دوسي هنا يا رودينا ❤️</h1>
 
   <p>
-    هدى ❤️<br>
-    في ناس وجودهم في حياتنا بيخلي الأيام أحلى،
-    وإنتِ من الناس اللي وجودهم له معنى خاص.
-    <br><br>
-    يمكن الكلام مش دايمًا يقدر يوصف اللي جوا القلب،
-    بس حبيت أقولك إنك شخص غالي ومميز،
-    ووجودك بيفرق أكتر مما تتخيلي.
+    عملتلك حاجة صغيرة مخصوص ليكي
+    <br>
+    بس الكلام اللي جواها كبير أوي 🥹
   </p>
 
-  <button onclick="showMessage()">
-    دوسي هنا ❤️
+  <button onclick="openLetter()">
+    افتحي الرسالة ❤️
   </button>
 
-  <div id="message">
-    أتمنى دايمًا أشوفك مبسوطة،
-    وتفضلي بنفس القلب الجميل اللي بيخلي وجودك مميز.
-    <br>
-    دي رسالة بسيطة… بس معمولة مخصوص ليكي يا هدى 🌷❤️
+</section>
+
+
+<!-- الموقع -->
+
+<section id="site" class="hidden">
+
+<header>
+
+  <div class="name">
+    Rodina ♥️
   </div>
+
+  <div class="subtitle">
+    رسالة من قلبي ليكي 🥹❤️
+  </div>
+
+</header>
+
+
+<!-- بداية الرسالة -->
+
+<section class="card">
+
+<h2>💌 رودينا</h2>
+
+<div class="message">
+
+مش عارف أبدأ كلامي منين،
+بس عارف حاجة واحدة أكيدة…
+
+<br><br>
+
+إنك بقيتي من أجمل الحاجات اللي حصلتلي.
+
+<br><br>
+
+وجودك في حياتي مش حاجة عادية،
+إنتِ شخص بيفرق معايا،
+وبيخلي اليوم مهما كان وحش
+يبقى أحلى لمجرد إني كلمتك.
+
+<br><br>
+
+يمكن الكلام ده كله مش هيقدر يوصف
+اللي جوايا ناحيتك،
+بس أنا نفسي تعرفي قد إيه إنتِ غالية عندي.
 
 </div>
 
+</section>
+
+
+<!-- الحب -->
+
+<section class="card">
+
+<h2>❤️ بحب فيكي إيه؟</h2>
+
+<div class="love-list">
+
+<div>بحب ضحكتك ❤️</div>
+
+<div>بحب كلامك وطريقتك 🥹</div>
+
+<div>بحب اهتمامك بيا 💗</div>
+
+<div>بحب وجودك في يومي 💕</div>
+
+<div>بحب التفاصيل الصغيرة اللي فيكي 💘</div>
+
+<div>وبحب إنك إنتِ… رودينا ❤️</div>
+
+</div>
+
+</section>
+
+
+<!-- الرسالة الطويلة -->
+
+<section class="card">
+
+<h2>🥹 كلام من قلبي</h2>
+
+<div class="message">
+
+أنا بحب وجودك جنبي،
+وبحب إن يكون في حد أقدر أحكيله عن يومي
+وأفرح معاه وأشارك معاه كل حاجة.
+
+<br><br>
+
+وبحب الإحساس اللي بيجيلي
+لما أشوف منك رسالة،
+أو أسمع صوتك،
+أو حتى أعرف إنك كويسة ومبسوطة.
+
+<br><br>
+
+إنتِ بقيتي جزء جميل من أيامي،
+والحاجات الحلوة اللي بتحصل معايا
+بتبقى أحلى لما أشاركها معاكي.
+
+<br><br>
+
+ومش عايز أتخيل أيامي من غير وجودك فيها،
+لأنك بقيتي شخص مهم جدًا بالنسبة ليا.
+
+<br><br>
+
+نفسي أفضل أشوفك مبسوطة،
+وأكون سبب في ضحكتك مش زعلك،
+وأفضل دايمًا الشخص اللي تقدري تلاقيه
+وقت ما تحتاجيه.
+
+</div>
+
+</section>
+
+
+<!-- اعتراف -->
+
+<section class="card">
+
+<h2>💗 اعتراف صغير</h2>
+
+<div class="quote">
+
+رودينا…
+
+<br>
+
+أنا بحبك ❤️
+
+<br><br>
+
+ومش مجرد كلمة بقولها وخلاص،
+دي حاجة بحسها كل مرة بتكلمك فيها.
+
+<br><br>
+
+إنتِ بالنسبالي شخص وجوده
+بقى جزء جميل من حياتي.
+
+</div>
+
+</section>
+
+
+<!-- المستقبل -->
+
+<section class="card">
+
+<h2>🌷 نفسي في إيه؟</h2>
+
+<div class="message">
+
+نفسي أفضل أشوفك في حياتي،
+ونفضل دايمًا قريبين من بعض.
+
+<br><br>
+
+نفسي كل ذكرى بينا تبقى أحلى من اللي قبلها،
+ونضحك على حاجات كتير حصلت بينا
+لما نفتكرها بعد فترة.
+
+<br><br>
+
+ومهما الأيام اتغيرت،
+أتمنى تفضلي دايمًا فاكرة
+إن كان في شخص بيحبك
+وكان شايفك مميزة عن أي حد.
+
+</div>
+
+</section>
+
+
+<!-- النهاية -->
+
+<section class="card center">
+
+<div class="big-love">
+❤️
+</div>
+
+<h2>رودينا ♥️</h2>
+
+<div class="message">
+
+مهما كتبت،
+هفضل حاسس إن الكلام قليل
+على اللي جوايا.
+
+<br><br>
+
+بحبك يا رودينا ❤️
+
+<br><br>
+
+وهفضل أتمنى إن الأيام تجمعنا
+على كل حاجة حلوة،
+وإن كل يوم جاي يكون فيه
+ضحكة وفرحة وراحة ليكي.
+
+<br><br>
+
+<strong>
+إنتِ شخص غالي…
+ومكانك في قلبي كبير ❤️
+</strong>
+
+</div>
+
+</section>
+
+
+<footer>
+Made with ❤️ for Rodina
+</footer>
+
+</section>
+
+</div>
+
+
 <script>
 
-function showMessage(){
-  document.getElementById("message").style.display="block";
+/* فتح الرسالة */
 
-  for(let i=0;i<25;i++){
-    let heart=document.createElement("div");
-    heart.className="heart-fall";
-    heart.innerHTML="❤️";
+function openLetter(){
 
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(3+Math.random()*4)+"s";
-    heart.style.fontSize=(15+Math.random()*20)+"px";
+  document.getElementById("start").style.display="none";
 
-    document.body.appendChild(heart);
+  document.getElementById("site").classList.remove("hidden");
 
-    setTimeout(()=>{
-      heart.remove();
-    },7000);
-  }
+  window.scrollTo(0,0);
+
 }
+
+
+/* القلوب المتحركة */
+
+function createHeart(){
+
+  const heart=document.createElement("div");
+
+  heart.className="floating-heart";
+
+  const hearts=[
+    "❤️",
+    "💗",
+    "💖",
+    "💕",
+    "💘",
+    "🌷",
+    "🥹❤️"
+  ];
+
+  heart.textContent=
+    hearts[Math.floor(Math.random()*hearts.length)];
+
+  heart.style.left=
+    Math.random()*100+"vw";
+
+  heart.style.fontSize=
+    (15+Math.random()*25)+"px";
+
+  heart.style.animationDuration=
+    (5+Math.random()*5)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(function(){
+    heart.remove();
+  },10000);
+
+}
+
+setInterval(createHeart,650);
 
 </script>
 
