@@ -3,510 +3,608 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rodina ❤️</title>
+<title>For Rovan ❤️</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Playfair+Display:wght@500;700&display=swap');
+
 *{
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-  margin:0;
-  min-height:100vh;
-  font-family:Tahoma,Arial,sans-serif;
-  background:
-    radial-gradient(circle at 20% 20%,#ff6f9f,transparent 35%),
-    radial-gradient(circle at 80% 80%,#9b4dca,transparent 35%),
-    linear-gradient(135deg,#160713,#3a1028,#160713);
-  color:white;
-  overflow-x:hidden;
+    min-height:100vh;
+    overflow:hidden;
+    font-family:'Cairo',sans-serif;
+    background:#050509;
+    color:white;
 }
 
-.container{
-  width:92%;
-  max-width:850px;
-  margin:auto;
-  padding-bottom:50px;
+/* الخلفية */
+#stars{
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 20%,rgba(255,70,130,.15),transparent 30%),
+      radial-gradient(circle at 80% 80%,rgba(130,70,255,.12),transparent 30%),
+      #050509;
+    z-index:-3;
 }
 
-.start{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
 }
 
-.start-heart{
-  font-size:95px;
-  animation:beat 1.3s infinite;
-  filter:drop-shadow(0 0 25px #ff4f91);
+@keyframes twinkle{
+    from{opacity:.15}
+    to{opacity:1}
 }
 
-.start h1{
-  font-size:42px;
-  margin:20px 0 10px;
+/* شاشة الباسورد */
+#lock{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:rgba(5,5,9,.96);
+    z-index:100;
+    transition:1s;
 }
 
-.start p{
-  color:#ffd8e6;
-  font-size:18px;
-  line-height:2;
+.lockBox{
+    width:100%;
+    max-width:390px;
+    padding:38px 25px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:30px;
+    background:rgba(255,255,255,.045);
+    backdrop-filter:blur(20px);
+    box-shadow:0 0 60px rgba(255,40,120,.12);
+}
+
+.lockIcon{
+    font-size:55px;
+    margin-bottom:15px;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.1)}
+}
+
+.lockBox h1{
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.lockBox p{
+    color:#aaa;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,.15);
+    outline:none;
+    background:rgba(255,255,255,.07);
+    color:white;
+    text-align:center;
+    font-size:17px;
 }
 
 button{
-  border:none;
-  border-radius:50px;
-  padding:15px 32px;
-  margin-top:15px;
-  background:linear-gradient(135deg,#ff3d7f,#ff83ad);
-  color:white;
-  font-size:18px;
-  cursor:pointer;
-  box-shadow:0 10px 30px #ff3d7f55;
+    border:0;
+    cursor:pointer;
+    font-family:'Cairo',sans-serif;
 }
 
-.hidden{
-  display:none;
-}
-
-header{
-  text-align:center;
-  padding:45px 10px 25px;
-}
-
-.name{
-  font-size:52px;
-  font-weight:bold;
-  color:#ffabc8;
-  text-shadow:0 0 25px #ff3d7f;
-}
-
-.subtitle{
-  margin-top:10px;
-  font-size:19px;
-  color:#f4cfdd;
-}
-
-.card{
-  background:#ffffff0d;
-  border:1px solid #ffffff20;
-  border-radius:28px;
-  padding:28px 23px;
-  margin:20px 0;
-  box-shadow:0 15px 40px #0005;
-  backdrop-filter:blur(8px);
-}
-
-.card h2{
-  text-align:center;
-  color:#ffabc9;
-  margin-top:0;
-  font-size:28px;
-}
-
-.message{
-  font-size:17px;
-  line-height:2.25;
-  color:#ffeaf1;
-}
-
-.center{
-  text-align:center;
-}
-
-.big-love{
-  font-size:70px;
-  animation:beat 1.3s infinite;
-}
-
-.quote{
-  text-align:center;
-  font-size:21px;
-  line-height:2;
-  color:#ffb7cf;
-  font-weight:bold;
-}
-
-.love-list{
-  display:grid;
-  gap:12px;
-}
-
-.love-list div{
-  padding:16px;
-  border-radius:18px;
-  background:#ff4c8c14;
-  border:1px solid #ff7eaa22;
-  text-align:center;
-  font-size:18px;
-}
-
-footer{
-  text-align:center;
-  color:#a98b99;
-  padding:30px 0;
-}
-
-.floating-heart{
-  position:fixed;
-  bottom:-50px;
-  pointer-events:none;
-  z-index:100;
-  animation:rise 7s linear forwards;
-}
-
-@keyframes beat{
-  0%,100%{
-    transform:scale(1);
-  }
-  50%{
-    transform:scale(1.15);
-  }
-}
-
-@keyframes rise{
-  0%{
-    transform:translateY(0) rotate(0);
-    opacity:0;
-  }
-
-  15%{
-    opacity:1;
-  }
-
-  100%{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
-  }
-}
-
-@media(max-width:600px){
-
-  .start h1{
-    font-size:31px;
-  }
-
-  .name{
-    font-size:42px;
-  }
-
-  .card{
-    padding:23px 18px;
-  }
-
-  .message{
+.unlock{
+    width:100%;
+    margin-top:13px;
+    padding:14px;
+    border-radius:15px;
+    color:white;
     font-size:16px;
-  }
+    background:linear-gradient(135deg,#ff3d7f,#9d4edd);
+    box-shadow:0 8px 30px rgba(255,50,120,.25);
+}
+
+#error{
+    height:25px;
+    margin-top:8px;
+    color:#ff5c8a;
+    font-size:13px;
+}
+
+/* الموقع */
+#site{
+    display:none;
+    min-height:100vh;
+    padding:25px;
+    justify-content:center;
+    align-items:center;
+}
+
+.page{
+    width:100%;
+    max-width:700px;
+    text-align:center;
+    animation:pageIn 1s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.small{
+    color:#ff6b9d;
+    letter-spacing:2px;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(40px,12vw,85px);
+    margin-bottom:15px;
+    background:linear-gradient(90deg,#fff,#ff78a9,#dba5ff,#fff);
+    background-size:250%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 5s linear infinite;
+}
+
+@keyframes shine{
+    to{background-position:250%}
+}
+
+.text{
+    color:#ddd;
+    font-size:18px;
+    line-height:2;
+    min-height:150px;
+}
+
+.next{
+    margin-top:25px;
+    padding:13px 28px;
+    border-radius:50px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    transition:.3s;
+}
+
+.next:hover{
+    transform:scale(1.05);
+    background:rgba(255,70,130,.2);
+}
+
+/* القلوب */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    animation:floatUp linear forwards;
+    z-index:5;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg) scale(.7);
+        opacity:0;
+    }
+    15%{opacity:1}
+    100%{
+        transform:translateY(-110vh) rotate(360deg) scale(1.3);
+        opacity:0;
+    }
+}
+
+/* رسالة نهائية */
+.finalCard{
+    padding:35px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 0 60px rgba(255,50,120,.08);
+}
+
+.finalCard h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.finalText{
+    color:#eee;
+    line-height:2.2;
+    font-size:17px;
+}
+
+.signature{
+    margin-top:25px;
+    color:#ff78a9;
+    font-size:20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div id="stars"></div>
 
-<!-- البداية -->
+<!-- شاشة السر -->
+<div id="lock">
+    <div class="lockBox">
+        <div class="lockIcon">🔐</div>
 
-<section id="start" class="start">
+        <h1>في حاجة ليكي...</h1>
 
-  <div class="start-heart">❤️</div>
+        <p>
+            بس مش هينفع تشوفيها غير لما تدخلي السر ❤️
+        </p>
 
-  <h1>دوسي هنا يا رودينا ❤️</h1>
+        <input
+            id="password"
+            type="text"
+            placeholder="اكتبي السر هنا..."
+            autocomplete="off"
+        >
 
-  <p>
-    عملتلك حاجة صغيرة مخصوص ليكي
-    <br>
-    بس الكلام اللي جواها كبير أوي 🥹
-  </p>
+        <button class="unlock" onclick="unlock()">
+            افتحي اللي جوا ❤️
+        </button>
 
-  <button onclick="openLetter()">
-    افتحي الرسالة ❤️
-  </button>
-
-</section>
-
-
-<!-- الموقع -->
-
-<section id="site" class="hidden">
-
-<header>
-
-  <div class="name">
-    Rodina ♥️
-  </div>
-
-  <div class="subtitle">
-    رسالة من قلبي ليكي 🥹❤️
-  </div>
-
-</header>
-
-
-<!-- بداية الرسالة -->
-
-<section class="card">
-
-<h2>💌 رودينا</h2>
-
-<div class="message">
-
-مش عارف أبدأ كلامي منين،
-بس عارف حاجة واحدة أكيدة…
-
-<br><br>
-
-إنك بقيتي من أجمل الحاجات اللي حصلتلي.
-
-<br><br>
-
-وجودك في حياتي مش حاجة عادية،
-إنتِ شخص بيفرق معايا،
-وبيخلي اليوم مهما كان وحش
-يبقى أحلى لمجرد إني كلمتك.
-
-<br><br>
-
-يمكن الكلام ده كله مش هيقدر يوصف
-اللي جوايا ناحيتك،
-بس أنا نفسي تعرفي قد إيه إنتِ غالية عندي.
-
+        <div id="error"></div>
+    </div>
 </div>
 
-</section>
+<!-- المحتوى -->
+<main id="site">
 
+    <section class="page" id="page">
+        <div class="small">A LITTLE SOMETHING FOR YOU</div>
 
-<!-- الحب -->
+        <h1 class="title">روڤان</h1>
 
-<section class="card">
+        <div class="text" id="text"></div>
 
-<h2>❤️ بحب فيكي إيه؟</h2>
+        <button class="next" onclick="nextPage()">
+            كمّلي... ✨
+        </button>
+    </section>
 
-<div class="love-list">
-
-<div>بحب ضحكتك ❤️</div>
-
-<div>بحب كلامك وطريقتك 🥹</div>
-
-<div>بحب اهتمامك بيا 💗</div>
-
-<div>بحب وجودك في يومي 💕</div>
-
-<div>بحب التفاصيل الصغيرة اللي فيكي 💘</div>
-
-<div>وبحب إنك إنتِ… رودينا ❤️</div>
-
-</div>
-
-</section>
-
-
-<!-- الرسالة الطويلة -->
-
-<section class="card">
-
-<h2>🥹 كلام من قلبي</h2>
-
-<div class="message">
-
-أنا بحب وجودك جنبي،
-وبحب إن يكون في حد أقدر أحكيله عن يومي
-وأفرح معاه وأشارك معاه كل حاجة.
-
-<br><br>
-
-وبحب الإحساس اللي بيجيلي
-لما أشوف منك رسالة،
-أو أسمع صوتك،
-أو حتى أعرف إنك كويسة ومبسوطة.
-
-<br><br>
-
-إنتِ بقيتي جزء جميل من أيامي،
-والحاجات الحلوة اللي بتحصل معايا
-بتبقى أحلى لما أشاركها معاكي.
-
-<br><br>
-
-ومش عايز أتخيل أيامي من غير وجودك فيها،
-لأنك بقيتي شخص مهم جدًا بالنسبة ليا.
-
-<br><br>
-
-نفسي أفضل أشوفك مبسوطة،
-وأكون سبب في ضحكتك مش زعلك،
-وأفضل دايمًا الشخص اللي تقدري تلاقيه
-وقت ما تحتاجيه.
-
-</div>
-
-</section>
-
-
-<!-- اعتراف -->
-
-<section class="card">
-
-<h2>💗 اعتراف صغير</h2>
-
-<div class="quote">
-
-رودينا…
-
-<br>
-
-أنا بحبك ❤️
-
-<br><br>
-
-ومش مجرد كلمة بقولها وخلاص،
-دي حاجة بحسها كل مرة بتكلمك فيها.
-
-<br><br>
-
-إنتِ بالنسبالي شخص وجوده
-بقى جزء جميل من حياتي.
-
-</div>
-
-</section>
-
-
-<!-- المستقبل -->
-
-<section class="card">
-
-<h2>🌷 نفسي في إيه؟</h2>
-
-<div class="message">
-
-نفسي أفضل أشوفك في حياتي،
-ونفضل دايمًا قريبين من بعض.
-
-<br><br>
-
-نفسي كل ذكرى بينا تبقى أحلى من اللي قبلها،
-ونضحك على حاجات كتير حصلت بينا
-لما نفتكرها بعد فترة.
-
-<br><br>
-
-ومهما الأيام اتغيرت،
-أتمنى تفضلي دايمًا فاكرة
-إن كان في شخص بيحبك
-وكان شايفك مميزة عن أي حد.
-
-</div>
-
-</section>
-
-
-<!-- النهاية -->
-
-<section class="card center">
-
-<div class="big-love">
-❤️
-</div>
-
-<h2>رودينا ♥️</h2>
-
-<div class="message">
-
-مهما كتبت،
-هفضل حاسس إن الكلام قليل
-على اللي جوايا.
-
-<br><br>
-
-بحبك يا رودينا ❤️
-
-<br><br>
-
-وهفضل أتمنى إن الأيام تجمعنا
-على كل حاجة حلوة،
-وإن كل يوم جاي يكون فيه
-ضحكة وفرحة وراحة ليكي.
-
-<br><br>
-
-<strong>
-إنتِ شخص غالي…
-ومكانك في قلبي كبير ❤️
-</strong>
-
-</div>
-
-</section>
-
-
-<footer>
-Made with ❤️ for Rodina
-</footer>
-
-</section>
-
-</div>
-
+</main>
 
 <script>
 
-/* فتح الرسالة */
+/* =========================
+   كلمة السر
+========================= */
 
-function openLetter(){
+const PASSWORD = "ROVAN😍";
 
-  document.getElementById("start").style.display="none";
+function unlock(){
 
-  document.getElementById("site").classList.remove("hidden");
+    const value =
+        document.getElementById("password").value.trim();
 
-  window.scrollTo(0,0);
+    if(value === PASSWORD || value === "ROVAN"){
 
+        const lock = document.getElementById("lock");
+
+        lock.style.opacity = "0";
+        lock.style.pointerEvents = "none";
+
+        setTimeout(()=>{
+            lock.style.display = "none";
+
+            document.getElementById("site").style.display = "flex";
+
+            startHearts();
+            showPage();
+        },900);
+
+    }else{
+
+        document.getElementById("error").innerText =
+            "السر غلط 😂 جربي تاني ❤️";
+
+    }
 }
 
 
-/* القلوب المتحركة */
+/* =========================
+   الصفحات
+========================= */
+
+const pages = [
+
+{
+    small:"FIRST THING...",
+    title:"روڤان ❤️",
+    text:
+    "مش عارف إمتى الموضوع بدأ بالظبط... " +
+    "بس فجأة لقيت نفسي باخد بالي من تفاصيلك أكتر من الأول. " +
+    "طريقة كلامك، ضحكتك، شخصيتك، وحتى الحاجات الصغيرة اللي يمكن إنتي مش واخدة بالك منها."
+},
+
+{
+    small:"YOUR PERSONALITY",
+    title:"شخصيتك ✨",
+    text:
+    "أكتر حاجة شدتني ليكي مش حاجة واحدة في شكلك... " +
+    "هي شخصيتك. طريقتك، كلامك، حضورك، والطريقة اللي بتخلي وجودك مختلف عن أي حد تاني. " +
+    "حسيت إن فيكي حاجة تخلي الواحد عايز يعرفك أكتر."
+},
+
+{
+    small:"YOUR EYES",
+    title:"عيونك 👀",
+    text:
+    "وعيونك بقى؟ دي حكاية لوحدها 😂❤️ " +
+    "فيها حاجة غريبة كده... حاجة تخلي الواحد ينسى هو كان عايز يقول إيه. " +
+    "مش عارف أوصفها، بس عارف إن عيونك من الحاجات اللي بدأت أحبها فيكي."
+},
+
+{
+    small:"THE LITTLE THINGS",
+    title:"تفاصيلك 🫶",
+    text:
+    "بدأت أحب تفاصيلك من غير ما أخطط لكده. " +
+    "ضحكتك، أسلوبك، كلامك، وحتى اللحظات العادية معاكي بقت ليها طعم مختلف. " +
+    "يمكن بالنسبة ليكي حاجات بسيطة... بس بالنسبالي بقت حاجات بتفرق."
+},
+
+{
+    small:"HONESTLY...",
+    title:"بصراحة ❤️",
+    text:
+    "أنا مش داخل أقول كلام محفوظ وخلاص. " +
+    "أنا بس حبيت أقولك إن وجودك بدأ ياخد مكان حلو عندي، " +
+    "وإني فعلًا بدأت أحبك بطريقة هادية، واحدة واحدة، من غير ما أحس."
+},
+
+{
+    small:"ONE LAST THING",
+    title:"روڤان...",
+    text:
+    "لو في حاجة واحدة نفسي تعرفيها، فهي إنك مش مجرد شخص عادي عدى في حياتي. " +
+    "إنتي بقيتي واحدة من الناس اللي وجودهم بيفرق، " +
+    "واللي الواحد بيبتسم لما يلاقي رسالة منهم. ❤️"
+}
+
+];
+
+let current = 0;
+
+function showPage(){
+
+    const p = pages[current];
+
+    const page =
+        document.getElementById("page");
+
+    page.style.animation = "none";
+
+    setTimeout(()=>{
+
+        page.style.animation =
+            "pageIn 1s ease";
+
+        document.querySelector(".small")
+            .innerText = p.small;
+
+        document.querySelector(".title")
+            .innerText = p.title;
+
+        typeText(p.text);
+
+    },50);
+}
+
+
+/* كتابة حرف حرف */
+
+function typeText(text){
+
+    const element =
+        document.getElementById("text");
+
+    element.innerHTML = "";
+
+    let i = 0;
+
+    const interval = setInterval(()=>{
+
+        element.innerHTML += text.charAt(i);
+
+        i++;
+
+        if(i >= text.length){
+            clearInterval(interval);
+        }
+
+    },28);
+}
+
+
+/* الصفحة التالية */
+
+function nextPage(){
+
+    if(current < pages.length - 1){
+
+        current++;
+
+        showPage();
+
+    }else{
+
+        showFinal();
+
+    }
+}
+
+
+/* النهاية */
+
+function showFinal(){
+
+    document.getElementById("page").innerHTML = `
+
+        <div class="finalCard">
+
+            <div class="small">
+                THIS IS FOR YOU
+            </div>
+
+            <h2>
+                آخر حاجة ❤️
+            </h2>
+
+            <div class="finalText">
+
+                روڤان، يمكن الكلام ده كله مجرد كلام مكتوب
+                على شاشة...
+
+                <br><br>
+
+                بس كل كلمة فيه اتعملت مخصوص عشان أقولك
+                حاجة بسيطة:
+
+                <br><br>
+
+                أنا بدأت أحب وجودك،
+                وأحب شخصيتك،
+                وأحب تفاصيلك،
+                وأحب الطريقة اللي بتخليكي مختلفة.
+
+                <br><br>
+
+                ومهما كان اللي هيحصل بعد كده،
+                هفضل مبسوط إن في يوم
+                قابلت شخص زيك. ❤️
+
+            </div>
+
+            <div class="signature">
+                — معمول مخصوص لـ روڤان 💗
+            </div>
+
+        </div>
+
+    `;
+
+    massiveHearts();
+}
+
+
+/* =========================
+   القلوب الطايرة
+========================= */
 
 function createHeart(){
 
-  const heart=document.createElement("div");
+    const heart =
+        document.createElement("div");
 
-  heart.className="floating-heart";
+    heart.className = "heart";
 
-  const hearts=[
-    "❤️",
-    "💗",
-    "💖",
-    "💕",
-    "💘",
-    "🌷",
-    "🥹❤️"
-  ];
+    const emojis = [
+        "❤️","💗","💖","💕","💘","💞","✨"
+    ];
 
-  heart.textContent=
-    hearts[Math.floor(Math.random()*hearts.length)];
+    heart.innerText =
+        emojis[Math.floor(Math.random()*emojis.length)];
 
-  heart.style.left=
-    Math.random()*100+"vw";
+    heart.style.left =
+        Math.random()*100 + "vw";
 
-  heart.style.fontSize=
-    (15+Math.random()*25)+"px";
+    heart.style.fontSize =
+        (12 + Math.random()*25) + "px";
 
-  heart.style.animationDuration=
-    (5+Math.random()*5)+"s";
+    heart.style.animationDuration =
+        (4 + Math.random()*5) + "s";
 
-  document.body.appendChild(heart);
+    document.body.appendChild(heart);
 
-  setTimeout(function(){
-    heart.remove();
-  },10000);
-
+    setTimeout(()=>{
+        heart.remove();
+    },9000);
 }
 
-setInterval(createHeart,650);
+function startHearts(){
+
+    setInterval(createHeart,500);
+}
+
+function massiveHearts(){
+
+    for(let i=0;i<40;i++){
+
+        setTimeout(createHeart,i*70);
+
+    }
+}
+
+
+/* =========================
+   النجوم
+========================= */
+
+for(let i=0;i<100;i++){
+
+    const star =
+        document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random()*100 + "%";
+
+    star.style.top =
+        Math.random()*100 + "%";
+
+    star.style.animationDelay =
+        Math.random()*2 + "s";
+
+    document.getElementById("stars")
+        .appendChild(star);
+}
+
+
+/* Enter يفتح الموقع */
+
+document
+.getElementById("password")
+.addEventListener("keydown",function(e){
+
+    if(e.key === "Enter"){
+        unlock();
+    }
+
+});
 
 </script>
 
